@@ -1,16 +1,27 @@
-plugins {
-    id 'java'
+// the resources required by the gradle script itself
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("io.spring.javaformat:spring-javaformat-gradle-plugin:0.0.6")
+    }
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+apply plugin: 'java'
+group 'com.songmengyuan.eos'
+apply plugin: 'io.spring.javaformat'
+apply plugin: 'checkstyle'
 
-sourceCompatibility = 1.8
-
+checkstyle {
+    toolVersion = "8.11"
+}
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    checkstyle("io.spring.javaformat:spring-javaformat-checkstyle:0.0.6")
+
 }
+
