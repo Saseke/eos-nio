@@ -1,4 +1,4 @@
-# What is Eos?
+# What is Eos-nio?
 
 a light weight NIO communication tool
 
